@@ -1,0 +1,15 @@
+/* Cabeçalho e seção principal (hero). */
+/* header */
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;height:64px;padding:0 16px;background:rgba(11,9,8,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+.brand img{height:42px;width:auto}.top nav{display:none;gap:4px}.top nav a{padding:8px 14px;border-radius:99px;color:var(--mut);font:500 14px var(--bd);transition:.2s}.top nav a:hover{color:var(--wh);background:var(--s2)}
+.acts{margin-left:auto;display:flex;gap:8px;align-items:center}
+.ic{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:42px;min-width:42px;padding:0 16px;background:var(--s2);border:1px solid var(--ln2);color:var(--wh);border-radius:99px;font:600 14px var(--bd);cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+.ic:hover{transform:translateY(-1px);background:var(--s3)}.ic.wa{background:#15803d;border-color:#15803d}.ic.wa:hover{background:#16a34a}
+#cartBtn{padding:0;width:42px;font-size:18px}
+#badge{position:absolute;top:-5px;right:-5px;min-width:20px;height:20px;border-radius:99px;background:var(--rd);border:2px solid var(--bk);font:700 11px var(--bd);display:grid;place-items:center;padding:0 4px;color:#fff}
+/* hero */
+.hero{display:grid;gap:20px;padding:28px 20px 40px;max-width:1120px;margin:auto;align-items:center;text-align:center}
+.hero .logo{width:min(64%,300px);margin:auto;filter:drop-shadow(0 16px 32px rgba(214,40,40,.28));animation:pop .8s cubic-bezier(.2,.8,.2,1) both,float 7s ease-in-out 1s infinite}
+.ht>*{animation:up .7s both}.ht h1{font:800 clamp(28px,7.4vw,48px)/1.12 var(--hd);letter-spacing:-.025em;animation-delay:.15s}
+.ht h1 em{color:var(--yl);font-style:normal}.ht p{color:var(--mut);font-size:16px;max-width:42ch;margin:14px auto 24px;animation-delay:.3s}
+.ht .btn{display:inline-flex;width:auto;margin:0;padding:0 32px;animation-delay:.45s}

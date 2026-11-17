@@ -1,0 +1,11 @@
+/* Seleção de sabores (pizza com até 3 sabores). */
+/* multi-sabores */
+#sheetBody h4 .cnt{margin-left:6px;color:var(--yl);text-transform:none;letter-spacing:0;font-weight:600;font-size:13px}#sheetBody h4 .cnt.full{color:#ff8f8f}
+.sel{display:grid;gap:8px}.fr{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--s2);border:1.5px solid var(--yl);border-radius:var(--r1)}
+.fr b{display:block;font:700 15px/1.3 var(--hd);color:var(--wh)}.fr small{display:block;margin-top:2px;color:var(--mut);font-size:12.5px;line-height:1.45}
+.fr.new{animation:flv .35s cubic-bezier(.2,.8,.2,1)}@keyframes flv{from{opacity:0;transform:translateY(-8px) scale(.97)}to{opacity:1;transform:none}}
+.rf{flex:none;margin-left:auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--ln2);background:var(--s3);color:var(--wh);font-size:18px;line-height:1;cursor:pointer;transition:.2s}.rf:hover{background:var(--rd);border-color:var(--rd)}
+.hint{margin:14px 0 10px;font-size:13px}.chs{display:flex;flex-wrap:wrap;gap:8px;max-height:176px;overflow-y:auto;padding:2px}
+.ch{min-height:38px;padding:0 14px;border-radius:99px;background:var(--s2);border:1px solid var(--ln2);color:var(--tx);font:500 13.5px var(--bd);cursor:pointer;transition:.2s}
+.ch:hover:not(:disabled){border-color:var(--yl);color:var(--wh);transform:translateY(-1px)}.ch:active:not(:disabled){transform:scale(.96)}.ch:disabled{opacity:.35;cursor:not-allowed}
+.fl{margin:4px 0 0;padding:0;list-style:none}.fl li{position:relative;padding-left:14px;color:var(--tx);font-size:13.5px}.fl li::before{content:'•';position:absolute;left:2px;color:var(--yl)}

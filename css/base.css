@@ -1,0 +1,10 @@
+/* Tokens de design (cores, raios, fontes), reset e tipografia. */
+:root{
+--bk:#0b0908;--s1:#151110;--s2:#1d1715;--s3:#271f1c;--ln:#2e2521;--ln2:#41342e;
+--rd:#d62828;--rd2:#b71c1c;--yl:#f2b632;--wh:#faf7f4;--tx:#e8e1db;--mut:#a89c93;
+--r1:12px;--r2:16px;--r3:24px;--sh:0 8px 24px rgba(0,0,0,.35);
+--hd:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--bd:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{background:var(--bk);color:var(--tx);font:400 15px/1.55 var(--bd);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,input,textarea{font-family:var(--bd)}
+h1,h2,h3,h4{font-family:var(--hd);color:var(--wh);letter-spacing:-.01em}

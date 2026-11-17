@@ -1,0 +1,27 @@
+/* Ajustes finos para celular, barra flutuante do carrinho e paisagem. */
+/* ===== ajustes mobile (2ª rodada) ===== */
+html{-webkit-tap-highlight-color:transparent}button,a,label,.card{touch-action:manipulation}
+.top{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+#sheetBody .fin h2{padding:0}
+.pr span{flex:1 1 0;min-width:0}
+/* card em grade: imagem à esquerda; preços e botão em largura total */
+@media(max-width:999px){
+.card{display:grid;grid-template-columns:96px 1fr;column-gap:12px;row-gap:0;padding:12px;align-content:start}
+.cb{display:contents}
+.ph{grid-column:1;grid-row:1/3;width:96px;height:96px;border-radius:var(--r1)}.ph img{aspect-ratio:auto}
+.cb h3{grid-column:2;grid-row:1;align-self:end;margin-bottom:4px}
+.cb p{grid-column:2;grid-row:2;align-self:start;-webkit-line-clamp:3}
+.pr{grid-column:1/-1;grid-row:3;margin-top:12px;padding-top:12px;border-top:1px solid var(--ln);gap:8px}
+.card .btn.sm{grid-column:1/-1;grid-row:4;margin-top:12px}
+}
+@media(min-width:1000px){.card{padding:0}.pr{padding-top:6px}}
+/* CTA fixo no rodapé dos painéis */
+#addBtn,.btn[data-go=checkout],.btn[data-go=review]{position:sticky;bottom:0;z-index:3;box-shadow:0 0 0 14px var(--s1),0 0 0 15px transparent}
+/* barra flutuante do carrinho (celular) */
+#cartBar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;gap:10px;min-height:54px;padding:0 18px;border:0;border-radius:var(--r2);background:linear-gradient(180deg,#e03131,var(--rd2));color:#fff;font:600 14px var(--bd);box-shadow:0 10px 28px rgba(0,0,0,.55);cursor:pointer;animation:up .35s both}
+#cartBar[hidden]{display:none}#cartBar .cb2{flex:1;text-align:center;letter-spacing:.03em}#cartBar .cb1{font-weight:500;opacity:.95}#cartBar .cb3{font:700 15px var(--bd);font-variant-numeric:tabular-nums}
+body.lock #cartBar{display:none}#toast{bottom:calc(80px + env(safe-area-inset-bottom))}
+footer{padding-bottom:96px}
+@media(min-width:700px){#cartBar{left:auto;right:24px;width:340px}footer{padding-bottom:96px}}
+@media(max-width:380px){.cb h3{font-size:16px}.chip{padding:0 16px}.sec{padding-left:12px;padding-right:12px}.top{gap:8px}.brand img{height:38px}.hero{padding-left:14px;padding-right:14px}}
+@media(max-height:480px) and (orientation:landscape){.mimg{height:130px}#sheetBody{max-height:96dvh}.hero .logo{width:180px}}

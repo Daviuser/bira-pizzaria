@@ -1,0 +1,9 @@
+{
+  "name": "bira-pizzaria-cardapio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cardápio digital da Bira Pizzaria Delivery (pedido via WhatsApp)",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
