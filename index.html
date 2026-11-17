@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bira Pizzaria Delivery — Cardápio e pedidos pelo WhatsApp</title>
+<meta name="description" content="Cardápio digital da Bira Pizzaria Delivery. Escolha suas pizzas e brotinhos e finalize seu pedido pelo WhatsApp.">
+<meta name="theme-color" content="#0d0b0a"><meta property="og:title" content="Bira Pizzaria Delivery"><meta property="og:description" content="Seu momento merece uma pizza especial!"><meta property="og:image" content="assets/logo.png">
+<link rel="icon" href="assets/logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+<header class="top"><a href="#top" class="brand"><img src="assets/logo.png" alt="Bira Pizzaria Delivery"></a>
+<nav><a href="#cardapio">Cardápio</a><a href="#info">Informações</a></nav>
+<div class="acts"><a id="wa1" class="ic wa" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a><button id="cartBtn" class="ic" aria-label="Abrir carrinho">🛒<span id="badge" hidden>0</span></button></div></header>
+<main id="top"><section class="hero"><img class="logo" src="assets/logo.png" alt="Bira Pizzaria Delivery"><div class="ht"><h1>Seu momento merece uma <em>pizza especial!</em></h1><p>Escolha seus sabores favoritos e peça agora na Bira Pizzaria.</p><a class="btn" href="#cardapio">VER CARDÁPIO</a></div></section>
+<section id="cardapio" class="sec"><h2>Cardápio</h2><p class="sub">Escolha o sabor, o tamanho e monte seu pedido.</p><div class="chips"><button class="chip on" data-cat="pizzas">Pizzas</button><button class="chip" data-cat="brotinho">Brotinho</button></div><div id="grid" class="grid"></div></section>
+<section id="info" class="sec info"><div><h3>Taxa de entrega</h3><p>R$ 4,00 (retirada no local sem taxa)</p></div><div><h3>Formas de pagamento</h3><p>Dinheiro, Pix e cartão — combinados com nossa equipe no WhatsApp</p></div><div><h3>WhatsApp</h3><p><a id="wa2" target="_blank" rel="noopener">(75) 98296-8263</a></p></div></section></main>
+<footer>Bira Pizzaria agradece pela preferência!</footer>
+<button id="cartBar" type="button" hidden><span class="cb1"><b id="cbN">0</b> <span id="cbL">item</span></span><span class="cb2">Ver carrinho</span><span class="cb3" id="cbT"></span></button>
+<div id="sheet" aria-hidden="true" role="dialog" aria-modal="true"><div id="sheetBody"></div></div><div id="toast" role="status"></div>
+<script src="js/format.js"></script><script src="js/data.js"></script><script src="js/cart.js"></script><script src="js/whatsapp.js"></script><script src="js/ui.js"></script><script src="js/main.js"></script>
+</body></html>
