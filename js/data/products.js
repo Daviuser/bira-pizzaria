@@ -7,6 +7,7 @@
 
   const pz=(id,name,ing,m,g,f)=>({id,name,prefix:'Pizza ',category:'pizzas',ingredients:ing,prices:{M:m,G:g,F:f},image:`assets/pizzas/${id}.webp`});
   const st=(id,n,i)=>pz(id,n,i,4000,4990,6500);
+  const dk=(id,name,desc,price)=>({id,name,prefix:'',category:'bebidas',ingredients:desc,prices:{UN:price},sizeLabels:{UN:'Unidade'},noSize:true,fit:'contain',image:`assets/bebidas/${id}.webp`});
   B.PRODUCTS=[
   pz('calabresa','Calabresa','Molho, mussarela, tomate, cebola, azeitona e orégano.',3500,4000,5000),
   pz('camarao','Camarão','Molho, mussarela, camarão, cebola, azeitona e orégano.',4000,5500,6000),
@@ -27,11 +28,16 @@
   st('napolitana','Napolitana','Molho, mussarela e parmesão.'),
   st('frango-cheddar','Frango com Cheddar','Mussarela, frango, cheddar e azeitona.'),
   st('frango-catupiry','Frango com Catupiry','Mussarela, frango, catupiry, tomate e orégano.'),
-  {id:'brotinho',name:'Brotinho',prefix:'',category:'brotinho',ingredients:'Massa de liquidificador.',prices:{PEQ:800,MED:1000},sizeLabels:{PEQ:'Pequeno',MED:'Médio'},image:'assets/pizzas/brotinho.webp'}
+  Object.assign(pz('romeu-julieta','Romeu e Julieta','Molho, queijo, Catupiry e goiabada cremosa.',4000,5000,5500), { isNew: true }),
+  {id:'brotinho',name:'Brotinho',prefix:'',category:'brotinho',ingredients:'Massa de liquidificador.',prices:{PEQ:800,MED:1000},sizeLabels:{PEQ:'Pequeno',MED:'Médio'},image:'assets/pizzas/brotinho.webp'},
+  dk('coca-lata','Coca-Cola lata','Lata 350 ml.',500),
+  dk('guarana-lata','Guaraná lata','Lata 350 ml.',500),
+  dk('coca-1l','Coca-Cola 1 litro','Garrafa de 1 litro.',1000),
+  dk('guarana-1l','Guaraná 1 litro','Garrafa de 1 litro.',800)
   ];
   
   B.product = (id) => B.PRODUCTS.find((p) => p.id === id);
   B.pizzas = () => B.PRODUCTS.filter((p) => p.category === 'pizzas');
   B.itemName = (p) => p.prefix + p.name;
-  B.sizeLabel = (p, s) => (p.sizeLabels ? p.sizeLabels[s] : B.SIZES[s].label + ' (' + s + ')');
+  B.sizeLabel = (p, s) => (p.noSize ? '' : p.sizeLabels ? p.sizeLabels[s] : B.SIZES[s].label + ' (' + s + ')');
 })(window.Bira);

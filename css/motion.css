@@ -1,0 +1,34 @@
+/* Movimento e refinamentos de painel: modal, carrinho, checkout, feedbacks. */
+#sheetBody{transition:transform .42s cubic-bezier(.2,.8,.2,1),opacity .3s;opacity:0}
+#sheet.open #sheetBody{opacity:1}
+/* indicador de etapas */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 48px 18px 0}
+.st i{display:block;position:relative;height:3px;border-radius:2px;background:var(--ln2);overflow:hidden}
+.st.done i::after,.st.cur i::after{content:'';position:absolute;inset:0;background:var(--yl);transform-origin:left}
+.st.cur i::after{animation:fill .55s .1s cubic-bezier(.2,.8,.2,1) backwards}.st.done i::after{opacity:.55}
+.st span{display:block;margin-top:6px;font:500 10.5px var(--bd);color:var(--mut)}.st.cur span{color:var(--wh)}
+@keyframes fill{from{transform:scaleX(0)}}
+/* modal: pizza dividida, sabores numerados, resumo */
+.mimg>*{animation:fadeIn .35s both}.mimg.is-pie{display:grid;place-items:center;background:var(--bk)}
+.pie{width:200px;height:200px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.5));animation:pieIn .45s cubic-bezier(.2,.8,.2,1)}
+.pie line{stroke:var(--yl);stroke-width:1.5}.pie .rim{fill:none;stroke:var(--yl);stroke-width:2}
+.pie .pn circle{fill:var(--bk);stroke:var(--yl);stroke-width:1.5}.pie .pn text{fill:var(--wh);font:700 12px var(--bd);text-anchor:middle;dominant-baseline:central}
+.num{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--yl);color:#1a1200;font:700 13px var(--bd);font-style:normal}
+.msum{margin-top:20px;padding:12px 14px;border:1px dashed var(--ln2);border-radius:var(--r1);background:var(--s2)}
+.msum b{display:block;color:var(--wh);font:600 14px/1.4 var(--bd)}.msum small{display:block;margin-top:2px;color:var(--mut);font-size:13px}
+.opt input:checked+span{animation:sel .3s}
+@keyframes sel{50%{transform:scale(.97)}}@keyframes fadeIn{from{opacity:0}}@keyframes pieIn{from{opacity:0;transform:scale(.9) rotate(-8deg)}}
+/* carrinho */
+.grp{margin:20px 0 2px;font:600 11px var(--bd);color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.li{align-items:center}.li>div:first-child,.li .lc{flex:1;min-width:0}
+.th{flex:none;width:54px;height:54px;border-radius:10px;object-fit:cover;background:#000}
+.li.out{animation:out .22s forwards}@keyframes out{to{opacity:0;transform:translateX(28px)}}
+.qty.s .rm{display:grid;place-items:center;color:var(--mut)}.qty.s .rm:hover{color:#ff7a7a}
+#cartBar.bump{animation:barBump .35s}@keyframes barBump{40%{transform:scale(1.025)}}
+.fly{position:fixed;left:0;top:0;width:56px;height:56px;border-radius:50%;object-fit:cover;z-index:70;pointer-events:none;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+/* revelação ao rolar */
+.js [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.js [data-reveal].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js [data-reveal]{opacity:1;transform:none}#sheetBody{opacity:1}.ht h1 .w{animation:none}}
+.btn{gap:.4em}
+body.lock #toast{opacity:0}
