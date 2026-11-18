@@ -12,9 +12,9 @@ return '';};
 B.message=o=>{
 const L=['Olá! Gostaria de fazer um pedido na Bira Pizzaria Delivery.','','*MEU PEDIDO:*',''];
 B.cart.items.forEach(i=>{const p=B.product(i.productId);
-const fn=B.flavorNames(i);if(fn.length>1){L.push(`${i.qty}x Pizza ${B.SIZES[i.size].label} (${i.size}) — ${fn.length} sabores:`);fn.forEach(n=>L.push('• '+n))}else L.push(`${i.qty}x ${B.itemName(p)} — ${B.sizeLabel(p,i.size)}`);
+const fn=B.flavorNames(i);if(fn.length>1){L.push(`${i.qty}x Pizza ${B.SIZES[i.size].label} (${i.size}) — ${fn.length} sabores:`);fn.forEach(n=>L.push('• '+n))}else{const sl=B.sizeLabel(p,i.size);L.push(`${i.qty}x ${B.itemName(p)}${sl?' — '+sl:''}`)}
 if(i.note)L.push('Obs: '+i.note);
-L.push('Valor: '+B.money(B.cart.unit(i)*i.qty),'');});
+if(i.qty>1)L.push('Valor unitário: '+B.money(B.cart.unit(i)));L.push('Valor: '+B.money(B.cart.unit(i)*i.qty),'');});
 L.push('*RESUMO FINANCEIRO:*','','Subtotal: '+B.money(B.cart.subtotal()));
 if(o.type==='entrega')L.push('Taxa de entrega: '+B.money(B.fee(o)));
 L.push('*TOTAL: '+B.money(B.total(o))+'*','','*DADOS DO CLIENTE:*','','Nome: '+o.name.trim(),'Tipo: '+(o.type==='entrega'?'Entrega':'Retirada no local'));

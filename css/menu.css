@@ -26,3 +26,7 @@
 .info{display:grid;gap:12px}.info>div{background:var(--s1);border:1px solid var(--ln);border-radius:var(--r2);padding:20px}
 .info h3{font:700 13px var(--hd);color:var(--yl);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.info p{color:var(--tx);font-size:15px}.info a{text-decoration:underline;text-underline-offset:3px}
 footer{text-align:center;color:var(--mut);font-size:14px;padding:32px 16px 56px;border-top:1px solid var(--ln)}
+
+.info strong{color:var(--yl);font-weight:600}
+footer .fh{color:var(--tx);font-weight:500;margin-bottom:6px}
+.ph img.contain,.mimg img.contain{object-fit:contain;padding:6px}
