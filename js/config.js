@@ -21,8 +21,9 @@ window.Bira = window.Bira || {};
     F: { label: 'Família', detail: 'até 12 fatias' },
   };
 
-  // Horário de funcionamento: todos os dias da semana (segunda a domingo).
-  B.HOURS = { open: '18:00', close: '23:55', tz: 'America/Bahia' };
+  // Horário de funcionamento: terça a domingo, das 19h às 00h (segunda-feira fechado).
+  // days: 0 = domingo, 1 = segunda, ... 6 = sábado. close '24:00' = meia-noite.
+  B.HOURS = { days: [2, 3, 4, 5, 6, 0], open: '19:00', close: '24:00', tz: 'America/Bahia' };
 
   B.MAX_FLAVORS = 3; // máximo de sabores por pizza
 })(window.Bira);

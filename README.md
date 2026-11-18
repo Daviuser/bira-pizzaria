@@ -45,6 +45,6 @@ js/
 - **Foto do hero:** substitua `assets/hero/hero.webp`.
 - **Preços e sabores:** `js/data/products.js` (valores em centavos, ex.: `4990` = R$ 49,90).
 - **Fotos:** substitua `assets/pizzas/<id>.webp` mantendo o nome do arquivo (4:3, ~640x480). As imagens atuais são ilustrações provisórias; troque por fotos reais quando tiver.
-- **Taxa de entrega, telefone, pagamentos e horário (`B.HOURS`):** `js/config.js`.
+- **Taxa de entrega, telefone, pagamentos e horário (`B.HOURS`: dias, abertura e fechamento):** `js/config.js`. Hoje: terça a domingo, 19h às 00h.
 - **Pizza com vários sabores:** o valor é o do sabor mais caro no tamanho escolhido (função `B.price` em `js/services/pricing.js`).
 - **Mensagem do WhatsApp:** `js/services/whatsapp.js`.

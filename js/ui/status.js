@@ -10,8 +10,9 @@
     el.textContent = st.text;
     el.classList.toggle('open', st.open);
     el.classList.toggle('closed', !st.open);
+    $('#infoDays').textContent = B.daysLabel();
     $('#infoHours').textContent = B.hoursLabel();
-    $('#footHours').textContent = 'Aberto todos os dias · ' + B.hoursLabel();
+    $('#footHours').textContent = `Funcionamos de terça a domingo · ${B.hoursLabel()}`;
   }
 
   B.ui.startStatus = () => { render(); setInterval(render, 60000); };

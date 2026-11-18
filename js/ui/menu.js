@@ -12,10 +12,10 @@
       const label = p.noSize ? '' : `<small>${p.sizeLabels ? p.sizeLabels[k] : k}</small>`;
       return `<span>${label}${M(p.prices[k])}</span>`;
     }).join('');
-    return `<article class="card" data-open="${p.id}" tabindex="0" style="--d:${(i % 6) * 60}ms">
+    return `<article class="card" data-open="${p.id}" style="--d:${(i % 6) * 60}ms">
 <div class="ph">${img(p, i)}${p.isNew ? '<span class="tag-new">Novidade</span>' : ''}</div>
 <div class="cb"><h3>${E(p.name)}</h3><p>${E(p.ingredients)}</p><div class="pr">${prices}</div>
-<button class="btn sm" tabindex="-1" aria-hidden="true">+ ADICIONAR</button></div></article>`;
+<button class="btn sm" data-open="${p.id}" aria-label="Adicionar ${E(p.name)}">+ ADICIONAR</button></div></article>`;
   }
 
   function menu() {
